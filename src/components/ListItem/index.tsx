@@ -6,9 +6,13 @@ type Props = {
     item: Item
 }
 
-export const ListItem = ({item}:Props) => {
-    const [isChecked, setIsChecked] = useState(item.done); 
+type PropsRemove = {
+    onChange :  (taskName: string) => []
+}
 
+export const ListItem = ({item}:Props, {onChange}: PropsRemove) => {
+    const [isChecked, setIsChecked] = useState(item.done); 
+    
     return (
     <C.Container done={isChecked}>
         <input type='checkbox' 

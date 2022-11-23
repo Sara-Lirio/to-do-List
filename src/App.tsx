@@ -6,8 +6,6 @@ import { AddArea } from './components/AddArea'
 
 const App = () => {
   const [list, setList] = useState<Item[]>([
-    { id: 1, name: 'Comprar pão', done: true },
-    { id:2, name: 'Fazer bolo', done: false},
   ])
 
   const handleAddTask = (taskName: string) => {
@@ -15,19 +13,20 @@ const App = () => {
     newList.push({
       id: list.length + 1,
       name: taskName,
-      done:false
+      done: false
     })
     setList(newList);
-  } 
+    console.log(list);
+  }
 
   return (
     <C.Container>
       <C.Area>
-        <C.Header>Notas</C.Header>
+        <C.Header>Lista de Notas</C.Header>
 
-        <AddArea onEnter={handleAddTask}/>
-        {list.map((item,index)=>(
-          <ListItem key={index} item={item}/>
+        <AddArea onEnter={handleAddTask} />
+        {list.map((item, index) => (
+          <ListItem key={index} item={item} />
         ))}
       </C.Area>
     </C.Container>

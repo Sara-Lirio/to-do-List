@@ -4,7 +4,7 @@ type ContainerProps = {
     done: boolean;
 }
 
-export const Container = styled.div(({done}: ContainerProps)=>(
+export const Container = styled.div(({ done }: ContainerProps) => (
     `
     display: flex;
     background-color: #333052;
@@ -15,11 +15,17 @@ export const Container = styled.div(({done}: ContainerProps)=>(
 
     input {
         width: 25px;
+        margin-right: 10px;
     }
 
     label{
         color: #CCC;
-        text-decoration: ${done ? 'line-through': 'initial'};
+        padding-top:1px;
+        text-decoration: ${done ? 'line-through' : 'initial'};
+    }
+
+    .delete {
+        
     }
 `
 ));

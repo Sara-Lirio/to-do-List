@@ -8,7 +8,6 @@ type Props = {
 export const AddArea = ({onEnter}:Props) => {
     const [input, setInput] = useState('');
 
-
     const handleKeyUp = (e: KeyboardEvent) => {
         if(e.code === 'Enter' && input != ''){
             onEnter(input);
